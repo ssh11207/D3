@@ -15,8 +15,8 @@ d3.csv("./2011110120120331.csv",
 	{
 		var ln = data.length;
 		console.log(data);
-		var maxy = d3.max(data, function(d){ return d.TX04; });
-		var lines = d3.line().x(function(d,i){return i*(width/ln);}).y(function(d){return -d.TX04*(height/maxy)});
+		var maxy = d3.max(data, function(d){ return d.TX02; });
+		var lines = d3.line().x(function(d,i){return i*(width/ln);}).y(function(d){return height-d.TX02*(height/maxy)});
 		ctrl.append("path").data([data]).attr("d", lines).attr("stroke", "red").attr("fill", "none");
 	}
 );
